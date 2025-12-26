@@ -19,7 +19,6 @@ public class SharedPrefManager {
         editor = sharedPreferences.edit();
     }
 
-    // ثبت‌نام کاربر
     public boolean register(String email, String password, String firstName, String lastName) {
         String savedEmail = sharedPreferences.getString(KEY_EMAIL, null);
         if (savedEmail != null && savedEmail.equals(email)) {
@@ -34,7 +33,6 @@ public class SharedPrefManager {
         return true;
     }
 
-    // ورود کاربر
     public boolean login(String email, String password) {
         String savedEmail = sharedPreferences.getString(KEY_EMAIL, null);
         String savedPassword = sharedPreferences.getString(KEY_PASSWORD, null);
@@ -42,12 +40,10 @@ public class SharedPrefManager {
         return email.equals(savedEmail) && password.equals(savedPassword);
     }
 
-    // گرفتن ایمیل کاربر
     public String getUserEmail() {
         return sharedPreferences.getString(KEY_EMAIL, null);
     }
 
-    // گرفتن نام کامل
     public String getUserFullName() {
         String firstName = sharedPreferences.getString(KEY_FIRST_NAME, "");
         String lastName = sharedPreferences.getString(KEY_LAST_NAME, "");

@@ -28,7 +28,6 @@ public class News {
     @SerializedName("media")
     private Media media;
 
-    // Constructor
     public News() {
     }
 
@@ -104,7 +103,6 @@ public class News {
         this.media = media;
     }
 
-    // Inner class for Media
     public static class Media {
         @SerializedName("original")
         private String original;
